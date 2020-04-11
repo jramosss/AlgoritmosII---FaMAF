@@ -3,16 +3,16 @@
 #include "stack.h"
  
 struct _stack_t {
-stack_elem_t value;
-stack_t next;	
+	stack_elem_t value;
+	stack_t next;	
 }; 
 
 stack_t stack_empty () {
-return NULL;
+	return NULL;
 }
 
 bool stack_is_empty (stack_t x) {
-return (x == NULL);
+	return (x == NULL);
 } 
 
 //Metiendo desde abajo.
@@ -58,13 +58,13 @@ unsigned int stack_size(stack_t s) {
 		c++;
 	}
 }
-return c;
+	return c;
 }
 
 //@brief Returns the element at the top of the stacks
 stack_elem_t stack_top(stack_t s) {
 	assert (!stack_is_empty(s));
-return s->value;
+	return s->value;
 }
 
 //@brief Creates an array with all the elements of the stack
@@ -81,7 +81,7 @@ stack_elem_t *stack_to_array(stack_t s) {
 	else {
 		arr = NULL;
 	}
-return arr;
+	return arr;
 }
 
 //@brief Destroys the stack
@@ -93,5 +93,5 @@ stack_t stack_destroy(stack_t s) {
 		free (d);
 		d = p;
 	}
-return s;	
+	return s;	
 }
